@@ -149,10 +149,9 @@ public class XLargeUi extends BaseUi {
 
     @Override
     public boolean onPrepareOptionsMenu(Menu menu) {
-        MenuItem bm = menu.findItem(R.id.bookmarks_menu_id);
-        if (bm != null) {
-            bm.setVisible(false);
-        }
+        // Desktop user agent is default for tablets, hide uaSwitcher
+        MenuItem uaSwitcher = menu.findItem(R.id.ua_desktop_menu_id);
+        uaSwitcher.setVisible(false);
         return true;
     }
 

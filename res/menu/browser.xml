@@ -27,6 +27,10 @@
                 android:id="@+id/forward_menu_id"
                 android:title="@string/forward"
                 android:icon="@*android:drawable/ic_menu_forward" />
+            <item
+                android:id="@+id/back_menu_id"
+                android:title="@string/back"
+                android:icon="@*android:drawable/ic_menu_back" />
         </group>
         <item
             android:id="@+id/new_tab_menu_id"

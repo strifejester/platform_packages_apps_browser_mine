@@ -44,6 +44,8 @@ public interface UiController {
 
     List<Tab> getTabs();
 
+    Tab openHomePage();
+
     Tab openTabToHomePage();
 
     Tab openIncognitoTab();

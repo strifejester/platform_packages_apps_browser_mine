@@ -45,6 +45,7 @@ public class NavigationBarTablet extends NavigationBarBase {
     private View mUrlContainer;
     private ImageButton mBackButton;
     private ImageButton mForwardButton;
+    private ImageButton mHomeButton;
     private ImageView mStar;
     private ImageView mUrlIcon;
     private ImageView mSearchButton;
@@ -96,6 +97,7 @@ public class NavigationBarTablet extends NavigationBarBase {
         mNavButtons = findViewById(R.id.navbuttons);
         mBackButton = (ImageButton) findViewById(R.id.back);
         mForwardButton = (ImageButton) findViewById(R.id.forward);
+        mHomeButton = (ImageButton) findViewById(R.id.home);
         mUrlIcon = (ImageView) findViewById(R.id.url_icon);
         mStar = (ImageView) findViewById(R.id.star);
         mStopButton = (ImageView) findViewById(R.id.stop);
@@ -106,6 +108,7 @@ public class NavigationBarTablet extends NavigationBarBase {
         mUrlContainer = findViewById(R.id.urlbar_focused);
         mBackButton.setOnClickListener(this);
         mForwardButton.setOnClickListener(this);
+        mHomeButton.setOnClickListener(this);
         mStar.setOnClickListener(this);
         mAllButton.setOnClickListener(this);
         mStopButton.setOnClickListener(this);
@@ -169,6 +172,8 @@ public class NavigationBarTablet extends NavigationBarBase {
             mUiController.getCurrentTab().goBack();
         } else if (mForwardButton == v) {
             mUiController.getCurrentTab().goForward();
+        } else if (mHomeButton == v) {
+            mUiController.openHomePage();
         } else if (mStar == v) {
             Intent intent = mUiController.createBookmarkCurrentPageIntent(true);
             if (intent != null) {
